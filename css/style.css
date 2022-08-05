@@ -1,0 +1,22 @@
+:root {
+  --clr-primary-300:   hsl(213, 84%, 24%);
+  --clr-primary-200:   hsl(214, 26%, 88%);
+  --clr-primary-100:   hsl(227, 60%, 97%);
+  --clr-primary-0:     hsl(0, 0%, 100%);
+  --clr-secondary-500: hsl(210, 10%, 23%);
+  --clr-secondary-400: hsl(210, 9%, 31%);
+
+  --fs-400: 2rem;
+  --fs-300: 1.5rem;
+  --fs-200: 1rem;
+  --fs-100: 0.75rem;
+
+  --ff-primary: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-style: var(--fs-300);
+  line-height: 1.5;
+}
