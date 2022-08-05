@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,26 @@
 </head>
 <body>
   <main>
-    <p>Hello world!</p>
+    <section class="left-section">
+      <div class="logo-wrapper">
+        <img src="images/alura-logo.png" alt="Logo de Alura">
+      </div>
+      <div class="input-wrapper">
+        <textarea id="to-encrypt" class="to-encrypt" placeholder="Ingrese el texto aquí"></textarea>
+        <div class="btns-wrapper">
+          <div class="encrypt-btn">
+            <p class="info">Solo letras minúsculas y sin acentos</p>
+            <button type="button" class="btn-enc btn">Encriptar</button>
+          </div>
+          <button type="button" class="btn-dec btn">Desencriptar</button>
+        </div>
+      </div>
+    </section>
+    <section class="right-section">
+      <img src="images/muñeco.png" alt="Persona buscando con una lupa">
+      <h2 clas="not-found">Ningún mensaje fue encontrado</h2>
+      <p clas="not-found--placeholder">Ingresa el texto que desees encriptar o desencriptar</p>
+    </section>
   </main>
 </body>
 </html>

@@ -1,3 +1,32 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
 :root {
   --clr-primary-300:   hsl(213, 84%, 24%);
   --clr-primary-200:   hsl(214, 26%, 88%);
@@ -11,12 +40,133 @@
   --fs-200: 1rem;
   --fs-100: 0.75rem;
 
+  --base-gap: 2.5vmax;
+
   --ff-primary: 'Inter', sans-serif;
 }
 
 body {
-  margin: 0;
   font-family: var(--ff-primary);
-  font-style: var(--fs-300);
+  font-size: var(--fs-200);
   line-height: 1.5;
+  background-color: var(--clr-primary-100);
+}
+
+main {
+  display: flex;
+  gap: calc( 2 * var(--base-gap));
+  min-height: 100vh;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: var(--base-gap);
+}
+
+/* Right section styles */
+
+.right-section {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--clr-primary-0);
+  border-radius: 2rem;
+}
+
+.right-section > * + * {
+  margin-block: .5em;
+}
+
+.not-fount {
+  font-size: var(--fs-300);
+}
+
+.not-fount--placeholder {
+  font-size: var(--fs-200);
+}
+
+.left-section,
+.right-section {
+  padding: 2rem;
+}
+
+/* Left section styles */
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 70%;
+}
+
+.logo-wrapper {
+  padding-left: var(--base-gap);
+  margin-bottom: calc(2 * var(--base-gap));
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: calc(5 * var(--base-gap));
+  flex-basis: 100%;
+}
+
+.to-encrypt {
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  min-height: 300px;
+  background-color: transparent;
+}
+
+.to-encrypt::placeholder,
+.to-encrypt {
+  font-size: var(--fs-400);
+  color: var(--clr-primary-300);
+}
+
+.btns-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.btns-wrapper > *:first-child,
+.btns-wrapper > *:last-child {
+  flex-basis: 100%;
+}
+
+.btn {
+  width: 20.5rem;
+  padding-block: 1.5em;
+  border: .75px solid var(--clr-primary-300);
+  border-radius: 1.5em;
+  cursor: pointer;
+}
+
+.btn-enc {
+  width: 100%;
+  background-color: var(--clr-primary-300);
+  color: var(--clr-primary-0)
+}
+
+.btn-dec {
+  background-color: var(--clr-primary-200);
+  color: var(--clr-primary-300);
+}
+
+.info {
+  font-size: var(--fs-100);
+  padding-bottom: 1em;
+}
+
+.info::before {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  aspect-ratio: 1 / 1;
+  margin-right: 2px;
+  margin-bottom: -2px;
+  background-image: url(../images/info-icon.png)
 }
