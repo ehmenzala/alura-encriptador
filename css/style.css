@@ -139,9 +139,32 @@ main {
   outline: none;
   resize: none;
   padding: 0;
+  padding-right: 10px;
   width: 100%;
   min-height: 400px;
   background-color: transparent;
+}
+
+.to-encrypt::-webkit-scrollbar {
+  width: 7.5px;
+}
+
+.to-encrypt::-webkit-scrollbar-track,
+.to-encrypt::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+.to-encrypt::-webkit-scrollbar-track {
+  background-color: hsl(223, 19%, 59%);
+}
+
+.to-encrypt::-webkit-scrollbar-thumb {
+  --opacity: 1;
+  background-color: hsla(213 84% 24% / var(--opacity));
+}
+
+.to-encrypt::-webkit-scrollbar-thumb:hover {
+  --opacity: 0.5;
 }
 
 .to-encrypt::placeholder,
