@@ -3,6 +3,11 @@ const $outputBox = d.getElementById('output')
 const $inputBox = d.getElementById('to-encrypt')
 const $encBtn = d.getElementById('enc-btn')
 const $decBtn = d.getElementById('dec-btn')
+const $copyBtn = d.createElement('BUTTON')
+
+$copyBtn.setAttribute('type', 'button')
+$copyBtn.classList.add('btn', 'btn-copiar')
+$copyBtn.textContent = 'Copiar'
 
 const ENC_KEYS = {
   a: 'ai',
@@ -21,38 +26,38 @@ const DEC_KEYS = {
 }
 
 $encBtn.addEventListener('click', () => {
-  const decryptedMessage = encMessage($inputBox.value)
+  const DECRYPTED_MESSAGE = encMessage($inputBox.value)
   const $p = d.createElement('P')
-  $p.textContent = decryptedMessage
-  $p.classList.add('processed')
+  $p.textContent = DECRYPTED_MESSAGE
+  $p.classList.add('output')
+  $p.id = 'output'
+  $outputBox.classList.add('processed')
   $outputBox.innerHTML = ''
   $outputBox.appendChild($p)
+  $outputBox.appendChild($copyBtn)
 })
 
 $decBtn.addEventListener('click', () => {
-  const encryptedMessage = decMessage($inputBox.value)
+  const ENCRYPTED_MESSAGE = decMessage($inputBox.value)
   const $p = d.createElement('P')
-  $p.textContent = encryptedMessage
-  $p.classList.add('processed')
+  $p.textContent = ENCRYPTED_MESSAGE
+  $p.classList.add('output')
+  $p.id = 'output'
+  $outputBox.classList.add('processed')
   $outputBox.innerHTML = ''
   $outputBox.appendChild($p)
+  $outputBox.appendChild($copyBtn)
 })
 
-function encMessage (message) {
-  let characters = message.split('')
-  let newMessage = characters.map(char => {
-    switch (char) {
-      case 'a':
-      case 'e':
-      case 'i':
-      case 'o':
-      case 'u':
-        return char.replace(char, ENC_KEYS[char])
-      default:
-        return char
-    }
-  }).join('')
+$copyBtn.addEventListener('click', () => copyResult())
 
+function copyResult() {
+  const $output = d.getElementById('output')
+  navigator.clipboard.writeText($output.textContent)
+}
+
+function encMessage (message) {
+  let newMessage = message.replace(/[aeiou]/g,(match) => ENC_KEYS[match])
   return newMessage
 }
 
@@ -60,3 +65,7 @@ function decMessage (message) {
   let newMessage = message.replace(/(ai|enter|imes|ober|ufat)/g,(match) => DEC_KEYS[match])
   return newMessage
 }
+
+setTimeout(() => {
+  navigator.clipboard = 'Anasheo'
+}, 2000);
