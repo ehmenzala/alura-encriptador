@@ -54,11 +54,19 @@ body {
 
 main {
   display: flex;
-  gap: calc( 2 * var(--base-gap));
+  flex-direction: column;
+  justify-content: space-between;
+  gap: calc(0.5 * var(--base-gap));
   min-height: 100vh;
-  max-width: 1440px;
+  width: 1440px;
+  max-width: 95%;
   margin-inline: auto;
   padding: var(--base-gap);
+}
+
+.hero-image {
+  visibility: hidden;
+  display: none;
 }
 
 .left-section,
@@ -96,25 +104,28 @@ main {
   display: flex;
   flex-direction: column;
   flex-basis: 70%;
+  height: 40rem;
 }
 
 .logo-wrapper {
+  flex-basis: 20%;
   padding-left: var(--base-gap);
   margin-bottom: calc(2 * var(--base-gap));
 }
 
 .input-wrapper {
+  flex-basis: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: calc(5 * var(--base-gap));
-  flex-basis: 100%;
+  padding-left: 0;
 }
 
 .to-encrypt {
   border: none;
   outline: none;
   resize: none;
+  padding: 0;
   width: 100%;
   min-height: 400px;
   background-color: transparent;
@@ -128,13 +139,14 @@ main {
 
 .btns-wrapper {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1.5rem;
 }
 
 .btns-wrapper > *:first-child,
 .btns-wrapper > *:last-child {
-  flex-basis: 100%;
+  width: 100%;
 }
 
 .btn {
@@ -169,4 +181,41 @@ main {
   margin-right: .5rem;
   margin-bottom: -2px;
   background-image: url(../images/info-icon.png)
+}
+
+@media screen and (min-width: 40em) {
+  .btns-wrapper {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .btns-wrapper > *:first-child,
+  .btns-wrapper > *:last-child {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  main {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: calc( 2 * var(--base-gap));
+  }
+
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+    height: auto;
+  }
+
+  .hero-image {
+    visibility: visible;
+    display: block;
+  }
+
+  .input-wrapper {
+    padding-left: calc(5 * var(--base-gap));
+    flex-basis: 100%;
+  }
 }
