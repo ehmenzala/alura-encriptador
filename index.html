@@ -21,17 +21,18 @@
         <div class="btns-wrapper">
           <div class="encrypt-btn">
             <p class="info">Solo letras minúsculas y sin acentos</p>
-            <button type="button" class="btn-enc btn">Encriptar</button>
+            <button type="button" class="btn-enc btn" id="enc-btn">Encriptar</button>
           </div>
-          <button type="button" class="btn-dec btn">Desencriptar</button>
+          <button type="button" class="btn-dec btn" id="dec-btn">Desencriptar</button>
         </div>
       </div>
     </section>
-    <section class="right-section">
+    <section class="right-section" id="output">
       <img src="images/muñeco.png" alt="Persona buscando con una lupa">
       <h2 clas="not-found">Ningún mensaje fue encontrado</h2>
       <p clas="not-found--placeholder">Ingresa el texto que desees encriptar o desencriptar</p>
     </section>
   </main>
+  <script src="scripts/index.js"></script>
 </body>
 </html>
