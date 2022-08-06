@@ -1,5 +1,5 @@
 const d = document
-const $outputBox = d.getElementById('output')
+const $outputBox = d.getElementById('output-box')
 const $inputBox = d.getElementById('to-encrypt')
 const $encBtn = d.getElementById('enc-btn')
 const $decBtn = d.getElementById('dec-btn')
