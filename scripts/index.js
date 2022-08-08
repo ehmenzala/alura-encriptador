@@ -65,7 +65,3 @@ function decMessage (message) {
   let newMessage = message.replace(/(ai|enter|imes|ober|ufat)/g,(match) => DEC_KEYS[match])
   return newMessage
 }
-
-setTimeout(() => {
-  navigator.clipboard = 'Anasheo'
-}, 2000);
