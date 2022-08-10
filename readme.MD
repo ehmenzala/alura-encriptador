@@ -1,6 +1,6 @@
 # Encriptador de mensajes - Alura Challenges ONE ✉
 
-[Desktop preview](images/desktop-preview.png)
+![Desktop preview](images/desktop-preview.png)
 
 ## Bienvenido! 👋
 Este proyecto fue desarrollado en un tiempo máximo de 4 semanas. Este consiste en una aplicación que encripta mensajes. Así podrás intercambiar mensajes secretos con otras personas que sepan el secreto del método de encriptación utilizado.
